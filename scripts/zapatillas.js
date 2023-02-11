@@ -31,8 +31,6 @@ menu.push(verde3);
 
 console.log(menu);
 
-
-
 //funcion para mostrar el menú
 function mostrarModelos(array) {
   for (let zapatilla of array) {
@@ -112,6 +110,8 @@ function agregarVariedad(array) {
   array.push(nuevaZapa);
   verMenu(menu);
   console.log(nuevaZapa);
+
+  localStorage.setItem("CatalogoZapas", menu);
 
   nuevoCodigo.value = "";
   nuevoDiseño.value = "";
