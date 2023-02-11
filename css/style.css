@@ -4,7 +4,7 @@
     width: 80vw;
     margin: auto;
   }
-  #formContainer #cargarPizzas {
+  #formContainer #cargarZapas {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

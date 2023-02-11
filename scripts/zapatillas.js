@@ -6,14 +6,14 @@ let catalogoMenu = document.getElementById("catalogo");
 let administrador = document.getElementById("formContainer");
 
 class zapatilla {
-    constructor(id, nombre, precioRojas, precioAzules, precioVerdes, imagen) {
-        this.id = id;
-        this.nombre = nombre;
-        this.precioRojas = precioRojas;
-        this.precioAzules = precioAzules;
-        this.precioVerdes = precioVerdes;
-        this.imagen = imagen;
-    }
+  constructor(id, nombre, precioRojas, precioAzules, precioVerdes, imagen) {
+    this.id = id;
+    this.nombre = nombre;
+    this.precioRojas = precioRojas;
+    this.precioAzules = precioAzules;
+    this.precioVerdes = precioVerdes;
+    this.imagen = imagen;
+  }
 }
 
 const roja1 = new zapatilla(1, "roja1", 950, 1100, 1800, "flyknit.webp");
@@ -28,60 +28,63 @@ const verde3 = new zapatilla(8, "verde3", 1300, 1400, 2400, "flyknit.webp");
 const menu = [roja1, roja2, roja3, azul1, azul2, verde1, verde2];
 
 menu.push(verde3);
+
 console.log(menu);
+
+
 
 //funcion para mostrar el menú
 function mostrarModelos(array) {
-    for (let zapatilla of array) {
-        console.log(
-            zapatilla.id,
-            zapatilla.nombre,
-            zapatilla.precioRojas,
-            zapatilla.precioAzules,
-            zapatilla.precioVerdes
-        );
-    }
+  for (let zapatilla of array) {
+    console.log(
+      zapatilla.id,
+      zapatilla.nombre,
+      zapatilla.precioRojas,
+      zapatilla.precioAzules,
+      zapatilla.precioVerdes
+    );
+  }
 }
 
 function mostrarPreciosRojas(array) {
-    for (let zapatillaRoja of array) {
-        console.log(
-            zapatillaRoja.id,
-            zapatillaRoja.nombre,
-            "$",
-            zapatillaRoja.precioRojas
-        );
-    }
+  for (let zapatillaRoja of array) {
+    console.log(
+      zapatillaRoja.id,
+      zapatillaRoja.nombre,
+      "$",
+      zapatillaRoja.precioRojas
+    );
+  }
 }
 
 function mostrarPreciosAzules(array) {
-    for (let zapatillaAzul of array) {
-        console.log(
-            zapatillaAzul.id,
-            zapatillaAzul.nombre,
-            "$",
-            zapatillaAzul.precioAzules
-        );
-    }
+  for (let zapatillaAzul of array) {
+    console.log(
+      zapatillaAzul.id,
+      zapatillaAzul.nombre,
+      "$",
+      zapatillaAzul.precioAzules
+    );
+  }
 }
 
 function mostrarPreciosVerdes(array) {
-    for (let zapatillaVerde of array) {
-        console.log(
-            zapatillaVerde.id,
-            zapatillaVerde.nombre,
-            "$",
-            zapatillaVerde.precioVerdes
-        );
-    }
+  for (let zapatillaVerde of array) {
+    console.log(
+      zapatillaVerde.id,
+      zapatillaVerde.nombre,
+      "$",
+      zapatillaVerde.precioVerdes
+    );
+  }
 }
-mostrarPreciosVerdes(menu)
+mostrarPreciosVerdes(menu);
 
 let modelosZapas = menu.map((e) => e.nombre);
 console.log(modelosZapas);
 
 menu.forEach((e) => {
-    console.log(`${e.nombre} $ ${e.precioRojas}`);
+  console.log(`${e.nombre} $ ${e.precioRojas}`);
 });
 
 const menu2 = [];
@@ -91,40 +94,40 @@ console.log(nuevoMenu);
 nuevoMenu.sort((a, b) => a.precioRojas - b.precioRojas);
 
 function agregarVariedad(array) {
-    let nuevoCodigo = document.getElementById("inputCod");
-    let nuevoDiseño = document.getElementById("inputNombre");
-    let precioRoja = document.getElementById("inputPrecioRoja");
-    let precioAzul = document.getElementById("inputPrecioAzul");
-    let precioVerde = document.getElementById("inputPrecioVerde");
+  let nuevoCodigo = document.getElementById("inputCod");
+  let nuevoDiseño = document.getElementById("inputNombre");
+  let precioRoja = document.getElementById("inputPrecioRoja");
+  let precioAzul = document.getElementById("inputPrecioAzul");
+  let precioVerde = document.getElementById("inputPrecioVerde");
 
-    const nuevaZapa = new zapa(
-        nuevoCodigo.value,
-        nuevoDiseño.value,
-        precioRoja.value,
-        precioAzul.value,
-        precioVerde.value,
-        "flyknit.webp"
-    );
+  const nuevaZapa = new zapa(
+    nuevoCodigo.value,
+    nuevoDiseño.value,
+    precioRoja.value,
+    precioAzul.value,
+    precioVerde.value,
+    "flyknit.webp"
+  );
 
-    array.push(nuevaZapa);
-    verMenu(menu);
-    console.log(nuevaZapa);
+  array.push(nuevaZapa);
+  verMenu(menu);
+  console.log(nuevaZapa);
 
-    nuevoCodigo.value = "";
-    nuevoDiseño.value = "";
-    precioRoja.value = "";
-    precioAzul.value = "";
-    precioVerde.value = "";
-    /* precioGig.value ="" */
+  nuevoCodigo.value = "";
+  nuevoDiseño.value = "";
+  precioRoja.value = "";
+  precioAzul.value = "";
+  precioVerde.value = "";
+  /* precioGig.value ="" */
 }
 
 function verMenu(array) {
-    catalogoMenu.innerHTML = "";
+  catalogoMenu.innerHTML = "";
 
-    for (let zapatillas of array) {
-        let divMenu = document.createElement("div");
-        divMenu.className = "col-12 col-md-6 col-lg-4 my-3";
-        divMenu.innerHTML = `
+  for (let zapatillas of array) {
+    let divMenu = document.createElement("div");
+    divMenu.className = "col-12 col-md-6 col-lg-4 my-3";
+    divMenu.innerHTML = `
     <div class="catalogo">
             <img class="card-img-top img-fluid" style=" width: 180px;"  src="imagenes/${zapatillas.imagen}" alt="${zapatillas.nombre}">
             <h3 style=" font-size: 1.2rem;">${zapatillas.nombre}</h3>
@@ -135,39 +138,39 @@ function verMenu(array) {
             <button id="botonComprar ${zapatillas.id}" class="btn btn-outline-danger" >Comprar</button>
         </div>
     `;
-        catalogoMenu.appendChild(divMenu);
-    }
+    catalogoMenu.appendChild(divMenu);
+  }
 }
 verMenu(menu);
 
 function borrarVariedad(array) {
-    let nombreAEliminar = prompt(`ingrese el modelo a eliminar`);
-    let arrayNombre = array.map((variedad) => variedad.nombre);
-    let indice = arrayNombre.indexOf(nombreAEliminar);
+  let nombreAEliminar = prompt(`ingrese el modelo a eliminar`);
+  let arrayNombre = array.map((variedad) => variedad.nombre);
+  let indice = arrayNombre.indexOf(nombreAEliminar);
 
-    array.splice(indice, 1);
-    alert(`eliminaste ${nombreAEliminar}`);
+  array.splice(indice, 1);
+  alert(`eliminaste ${nombreAEliminar}`);
 }
 
 administrador.innerHTML = "";
 
 function verAdministrador() {
-    administrador.innerHTML = "";
-    divForm = document.createElement("div");
-    divForm.innerHTML = `
+  administrador.innerHTML = "";
+  divForm = document.createElement("div");
+  divForm.innerHTML = `
            
-               <form  id="cargarPizzas">
-                   <h2>Cargar variedades de Pizzotas</h2>
+               <form  id="cargarZapas">
+                   <h2>Modelos</h2>
                    <label class="Label" for="id">Ingrese ID</label>
                    <input type="number" name="id" id="inputCod">
-                   <label class="Label" for="Nombre">Nombre de la pizza</label>
+                   <label class="Label" for="Nombre">Nombre</label>
                    <input type="text" name="Nombre" id="inputNombre">
-                   <label class="Label" for="precioChica">Precio de la Pizza Chica</label>
-                   <input type="number" name="precioChica" id="inputPrecioChica">
-                   <label class="Label" for="precioMedia">Precio de la Media Pizza</label>
-                   <input type="number" name="precioMedia" id="inputPrecioMedia">
-                   <label class="Label" for="precioGigante">Precio de la Pizza Gigante</label>
-                   <input type="number" name="precioGigante" id="inputPrecioGigante">
+                   <label class="Label" for="precioRoja">Precio de la Zapa Roja</label>
+                   <input type="number" name="precioRoja" id="inputPrecioChica">
+                   <label class="Label" for="precioAzul">Precio de la Zapa Azul</label>
+                   <input type="number" name="precioAzul" id="inputPrecioMedia">
+                   <label class="Label" for="precioVerde">Precio de la Zapa verde</label>
+                   <input type="number" name="precioVerde" id="inputPrecioGigante">
                    <br>
                    <input type="button" class="btn-cargar" id="btnCargar" >
                    <br>
@@ -177,20 +180,19 @@ function verAdministrador() {
            
            `;
 
-    administrador.appendChild(divForm);
+  administrador.appendChild(divForm);
 
-    let btnCargar = document.getElementById("btnCargar");
-    btnCargar.onclick = () => {
-        agregarVariedad(menu);
-    };
-    let $salirAdministrador = document.getElementById("salirAdministrador");
-    $salirAdministrador.onclick = () => {
-        administrador.innerHTML = "";
-    };
+  let btnCargar = document.getElementById("btnCargar");
+  btnCargar.onclick = () => {
+    agregarVariedad(menu);
+  };
+  let $salirAdministrador = document.getElementById("salirAdministrador");
+  $salirAdministrador.onclick = () => {
+    administrador.innerHTML = "";
+  };
 }
 
-let $mostrarAdministrador = document.getElementById("mostrarAdministrador")
-     $mostrarAdministrador.onclick = ()=>{
-        verAdministrador()
-     }
-
+let $mostrarAdministrador = document.getElementById("mostrarAdministrador");
+$mostrarAdministrador.onclick = () => {
+  verAdministrador();
+};
